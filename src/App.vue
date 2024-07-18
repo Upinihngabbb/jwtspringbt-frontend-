@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app" class="flex flex-col min-h-screen">
+    <AppNavbar v-if="!isExemptedPage" />
+    <div class="flex-grow">
+      <router-view />
+    </div>
+    <Copyright v-if="!isExemptedPage" />
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+import AppNavbar from "./components/AppNavbar.vue";
+import Copyright from "./components/Copyright.vue";
+import { computed } from "vue";
+import { useRouter } from "vue-router";
 
-nav {
-  padding: 30px;
+const router = useRouter();
+const exemptedPages = ["/", "/register"];
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+const isExemptedPage = computed(() => {
+  return exemptedPages.includes(router.currentRoute.value.path);
+});
+</script>
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style>
+/* Add your styles here */
 </style>
