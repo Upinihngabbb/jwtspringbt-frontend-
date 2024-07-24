@@ -13,11 +13,17 @@ import Login from "../views/login-regist/Login.vue";
 import Register from "../views/login-regist/Register.vue";
 import UserList from "../views/user/UserList.vue";
 import UpdateUser from "../views/user/Update.vue";
+import DigitalClock from "../components/DigitalClock.vue";
 const routes = [
   {
     path: "/",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/clock",
+    name: "DigitalClock",
+    component: DigitalClock,
   },
 
   {

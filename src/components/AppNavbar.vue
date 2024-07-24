@@ -67,6 +67,13 @@
                 >
                   Userlist
                 </button>
+                <button
+                  @click="navigateToClock"
+                  class="text-gray-700 block px-4 py-2 text-sm w-full text-left"
+                  role="menuitem"
+                >
+                  Digital Clock
+                </button>
               </div>
             </div>
           </div>
@@ -128,6 +135,9 @@ export default {
         .catch((error) => {
           console.error("Logout error:", error);
         });
+    },
+    navigateToClock() {
+      this.$router.push({ name: "DigitalClock" });
     },
   },
 };

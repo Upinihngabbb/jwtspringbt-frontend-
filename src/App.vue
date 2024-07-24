@@ -4,7 +4,7 @@
     <div class="flex-grow">
       <router-view />
     </div>
-    <Copyright v-if="!isExemptedPage" />
+    <!-- <Copyright v-if="!isExemptedPage" /> -->
   </div>
 </template>
 

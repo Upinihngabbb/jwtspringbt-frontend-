@@ -157,7 +157,7 @@ export default {
 
 <style>
 .animated-bg {
-  background: linear-gradient(270deg, #001f3f, #7df9ff);
+  background: linear-gradient(270deg, #001f3f, #4168a5);
   background-size: 600% 600%;
   animation: gradientAnimation 10s ease infinite;
 }
